@@ -28,8 +28,12 @@ jobs:
     - name: Build
       run: msbuild SweetPotato.sln /p:Configuration=Release
 
+    - name: List build output
+      run: dir bin\Release
+      shell: cmd
+
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: SweetPotato
-        path: SweetPotato/bin/Release/SweetPotato.exe
+        path: bin/Release/SweetPotato.exe
