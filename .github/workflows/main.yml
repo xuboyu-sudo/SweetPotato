@@ -18,6 +18,10 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v2
 
+    - name: Install .NET Framework 4.6.1 Developer Pack
+      run: choco install netfx-4.6.1-devpack -y --no-progress
+      shell: powershell
+
     - name: Restore NuGet packages
       run: nuget restore SweetPotato.sln
 
